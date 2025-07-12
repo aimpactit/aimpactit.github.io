@@ -433,26 +433,31 @@
 
         .carousel-container {
             position: relative;
+            width: 100%;
             max-width: 800px;
             margin: 0 auto;
             overflow: hidden;
             border-radius: 20px;
             box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            aspect-ratio: 8 / 5; /* Maintain 800x500 aspect ratio */
         }
 
         .carousel-wrapper {
             display: flex;
             transition: transform 0.5s ease;
+            width: 100%;
         }
 
         .carousel-slide {
             min-width: 100%;
             position: relative;
+            display: flex;
         }
 
         .carousel-slide img {
             width: 100%;
-            height: 500px;
+            height: auto;
+            max-height: 500px;
             object-fit: cover;
             display: block;
         }
@@ -513,6 +518,7 @@
             justify-content: center;
             gap: 10px;
             margin-top: 20px;
+            flex-wrap: wrap; /* Allow dots to wrap on smaller screens */
         }
 
         .carousel-dot {
@@ -531,6 +537,54 @@
 
         .carousel-dot:hover {
             background: #5fc3b7;
+        }
+
+        /* Responsive adjustments for carousel */
+        @media (max-width: 768px) {
+            .carousel-container {
+                max-height: 300px; /* Smaller height for mobile */
+            }
+
+            .carousel-slide img {
+                max-height: 300px; /* Match container height */
+            }
+
+            .carousel-caption h3 {
+                font-size: 1.2rem;
+            }
+
+            .carousel-caption p {
+                font-size: 0.9rem;
+            }
+
+            .carousel-nav {
+                width: 40px;
+                height: 40px;
+                font-size: 20px;
+            }
+
+            .carousel-dot {
+                width: 10px;
+                height: 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .carousel-container {
+                max-height: 200px; /* Even smaller for very small screens */
+            }
+
+            .carousel-slide img {
+                max-height: 200px;
+            }
+
+            .carousel-caption h3 {
+                font-size: 1rem;
+            }
+
+            .carousel-caption p {
+                font-size: 0.8rem;
+            }
         }
 
         /* About Section */
@@ -890,63 +944,63 @@
             <div class="carousel-container">
                 <div class="carousel-wrapper" id="carouselWrapper">
                     <div class="carousel-slide">
-                        <img src="https://i.imgur.com/VIownJk.jpg" alt="Luxury Candle 1" style="width: 100%; height: 100%; object-fit: cover;">
+                        <img src="https://i.imgur.com/VIownJk.jpg" alt="Luxury Candle 1">
                         <div class="carousel-caption">
                             <h3>Luxury Candle</h3>
                             <p>Handcrafted with premium ingredients for a warm, inviting glow.</p>
                         </div>
                     </div>
                     <div class="carousel-slide">
-                        <img src="https://i.imgur.com/lEfk6jP.jpg" alt="Room Spray" style="width: 100%; height: 100%; object-fit: cover;">
+                        <img src="https://i.imgur.com/lEfk6jP.jpg" alt="Room Spray">
                         <div class="carousel-caption">
                             <h3>Room Spray</h3>
                             <p>Instantly refresh any space with our signature scents.</p>
                         </div>
                     </div>
                     <div class="carousel-slide">
-                        <img src="https://i.imgur.com/l8ukmVM.jpg" alt="Fragrance Oil" style="width: 100%; height: 100%; object-fit: cover;">
+                        <img src="https://i.imgur.com/l8ukmVM.jpg" alt="Fragrance Oil">
                         <div class="carousel-caption">
                             <h3>Fragrance Oil</h3>
                             <p>Perfect for diffusers or creating your own custom blends.</p>
                         </div>
                     </div>
                     <div class="carousel-slide">
-                        <img src="https://i.imgur.com/VLM9M51.jpg" alt="Luxury Candle 2" style="width: 100%; height: 100%; object-fit: cover;">
+                        <img src="https://i.imgur.com/VLM9M51.jpg" alt="Luxury Candle 2">
                         <div class="carousel-caption">
                             <h3>Luxury Candle</h3>
                             <p>Exquisite scents crafted to elevate your ambiance.</p>
                         </div>
                     </div>
                     <div class="carousel-slide">
-                        <img src="https://i.imgur.com/mR5ku0M.jpg" alt="Signature Scent 1" style="width: 100%; height: 100%; object-fit: cover;">
+                        <img src="https://i.imgur.com/mR5ku0M.jpg" alt="Signature Scent 1">
                         <div class="carousel-caption">
                             <h3>Signature Scent</h3>
                             <p>Unique blends that capture the essence of luxury.</p>
                         </div>
                     </div>
                     <div class="carousel-slide">
-                        <img src="https://i.imgur.com/2FbEIYK.jpg" alt="Luxury Candle 3" style="width: 100%; height: 100%; object-fit: cover;">
+                        <img src="https://i.imgur.com/2FbEIYK.jpg" alt="Luxury Candle 3">
                         <div class="carousel-caption">
                             <h3>Luxury Candle</h3>
                             <p>Hand-poured perfection for a cozy atmosphere.</p>
                         </div>
                     </div>
                     <div class="carousel-slide">
-                        <img src="https://i.imgur.com/thtvHHC.jpg" alt="Signature Scent 2" style="width: 100%; height: 100%; object-fit: cover;">
+                        <img src="https://i.imgur.com/thtvHHC.jpg" alt="Signature Scent 2">
                         <div class="carousel-caption">
                             <h3>Signature Scent</h3>
                             <p>Transform your space with our exclusive fragrances.</p>
                         </div>
                     </div>
                     <div class="carousel-slide">
-                        <img src="https://i.imgur.com/GMcjqKq.jpg" alt="Luxury Candle 4" style="width: 100%; height: 100%; object-fit: cover;">
+                        <img src="https://i.imgur.com/GMcjqKq.jpg" alt="Luxury Candle 4">
                         <div class="carousel-caption">
                             <h3>Luxury Candle</h3>
                             <p>Artisanal creations for a sensory experience.</p>
                         </div>
                     </div>
                     <div class="carousel-slide">
-                        <img src="https://i.imgur.com/39KWxmr.jpg" alt="Signature Scent 3" style="width: 100%; height: 100%; object-fit: cover;">
+                        <img src="https://i.imgur.com/39KWxmr.jpg" alt="Signature Scent 3">
                         <div class="carousel-caption">
                             <h3>Signature Scent</h3>
                             <p>Elegant aromas to enhance any moment.</p>
