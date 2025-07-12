@@ -702,10 +702,10 @@
                     <h1>Scentzational Scentz By Kris</h1>
                 </div>
                 <nav class="nav-links">
-                    <a onclick="scrollTo('categories')">Shop</a>
-                    <a onclick="scrollTo('gallery')">Gallery</a>
-                    <a onclick="scrollTo('about')">About</a>
-                    <a onclick="scrollTo('contact')">Contact</a>
+                    <a href="#categories" onclick="scrollTo('categories'); return false;">Shop</a>
+                    <a href="#gallery" onclick="scrollTo('gallery'); return false;">Gallery</a>
+                    <a href="#about" onclick="scrollTo('about'); return false;">About</a>
+                    <a href="#contact" onclick="scrollTo('contact'); return false;">Contact</a>
                     <div class="cart-icon" onclick="toggleCart()">
                         🛒
                         <span class="cart-count" id="cartCount">0</span>
@@ -957,20 +957,35 @@
     <script>
         // Carousel functionality
         let currentSlideIndex = 0;
-        const slides = document.querySelectorAll('.carousel-slide');
-        const dots = document.querySelectorAll('.carousel-dot');
-        const totalSlides = slides.length;
+        let slides, dots, totalSlides;
+
+        function initializeCarousel() {
+            slides = document.querySelectorAll('.carousel-slide');
+            dots = document.querySelectorAll('.carousel-dot');
+            totalSlides = slides.length;
+            
+            if (totalSlides > 0) {
+                showSlide(0);
+                
+                // Auto-play carousel
+                setInterval(() => {
+                    changeSlide(1);
+                }, 5000);
+            }
+        }
 
         function showSlide(index) {
             const wrapper = document.getElementById('carouselWrapper');
-            wrapper.style.transform = `translateX(-${index * 100}%)`;
-            
-            // Update dots
-            dots.forEach((dot, i) => {
-                dot.classList.toggle('active', i === index);
-            });
-            
-            currentSlideIndex = index;
+            if (wrapper && slides.length > 0) {
+                wrapper.style.transform = `translateX(-${index * 100}%)`;
+                
+                // Update dots
+                dots.forEach((dot, i) => {
+                    dot.classList.toggle('active', i === index);
+                });
+                
+                currentSlideIndex = index;
+            }
         }
 
         function changeSlide(direction) {
@@ -989,10 +1004,18 @@
             showSlide(index - 1);
         }
 
-        // Auto-play carousel
-        setInterval(() => {
-            changeSlide(1);
-        }, 5000);
+        // Initialize carousel when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeCarousel();
+            
+            // Initialize product card animations
+            document.querySelectorAll('.product-card, .category-card').forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(card);
+            });
+        });
 
         // Cart functionality
         let cart = [];
