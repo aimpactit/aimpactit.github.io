@@ -111,16 +111,17 @@
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(44, 95, 93, 0.7), rgba(58, 115, 113, 0.7)), url('https://i.imgur.com/39KWxmr.jpg');
+            background: linear-gradient(rgba(44, 95, 93, 0.6), rgba(58, 115, 113, 0.6)), url('https://i.imgur.com/39KWxmr.jpg');
             color: white;
             padding: 140px 0 80px;
             text-align: center;
-            background-size: cover;
+            background-size: contain;
             background-position: center;
             background-repeat: no-repeat;
             background-attachment: fixed;
             position: relative;
             overflow: hidden;
+            min-height: 600px;
         }
 
         .hero::before {
@@ -130,7 +131,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: radial-gradient(circle at center, transparent 30%, rgba(44, 95, 93, 0.3) 70%);
+            background: radial-gradient(circle at center, transparent 40%, rgba(44, 95, 93, 0.2) 80%);
             z-index: 1;
         }
 
