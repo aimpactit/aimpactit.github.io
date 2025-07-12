@@ -633,7 +633,7 @@
             }
 
             .hero {
-                padding: 120px 0 80px; /* Reduced from 160px to 120px */
+                padding: 180px 0 80px; /* Adjusted for new nav height */
             }
 
             .hero h2 {
@@ -996,9 +996,15 @@
         let cartTotal = 0;
 
         function scrollTo(elementId) {
-            document.getElementById(elementId).scrollIntoView({
-                behavior: 'smooth'
-            });
+            const element = document.getElementById(elementId);
+            if (element) {
+                const headerHeight = document.querySelector('header').offsetHeight;
+                const elementPosition = element.offsetTop - headerHeight - 20;
+                window.scrollTo({
+                    top: elementPosition,
+                    behavior: 'smooth'
+                });
+            }
         }
 
         function updatePrice(selectElement, priceElementId) {
