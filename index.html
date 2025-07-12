@@ -998,11 +998,9 @@
         function scrollTo(elementId) {
             const element = document.getElementById(elementId);
             if (element) {
-                const headerHeight = document.querySelector('header').offsetHeight;
-                const elementPosition = element.offsetTop - headerHeight - 20;
-                window.scrollTo({
-                    top: elementPosition,
-                    behavior: 'smooth'
+                element.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
                 });
             }
         }
