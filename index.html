@@ -81,10 +81,13 @@
             font-weight: 500;
             transition: color 0.3s;
             cursor: pointer;
+            padding: 8px 12px;
+            border-radius: 5px;
         }
 
         .nav-links a:hover {
             color: #b8860b;
+            background: rgba(255,255,255,0.1);
         }
 
         .cart-icon {
@@ -699,10 +702,10 @@
                     <h1>Scentzational Scentz By Kris</h1>
                 </div>
                 <nav class="nav-links">
-                    <a href="#categories" onclick="scrollTo('categories')">Shop</a>
-                    <a href="#gallery" onclick="scrollTo('gallery')">Gallery</a>
-                    <a href="#about" onclick="scrollTo('about')">About</a>
-                    <a href="#contact" onclick="scrollTo('contact')">Contact</a>
+                    <a onclick="scrollTo('categories')">Shop</a>
+                    <a onclick="scrollTo('gallery')">Gallery</a>
+                    <a onclick="scrollTo('about')">About</a>
+                    <a onclick="scrollTo('contact')">Contact</a>
                     <div class="cart-icon" onclick="toggleCart()">
                         🛒
                         <span class="cart-count" id="cartCount">0</span>
