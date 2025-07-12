@@ -155,7 +155,7 @@
             background: rgba(184, 134, 11, 0.3);
             border-radius: 50%;
             z-index: -1;
-        }KKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKK
+        }
 
         .hero h2 {
             font-size: 3.5rem;
@@ -702,10 +702,10 @@
                     <h1>Scentzational Scentz By Kris</h1>
                 </div>
                 <nav class="nav-links">
-                    <a href="#categories" onclick="scrollTo('categories'); return false;">Shop</a>
-                    <a href="#gallery" onclick="scrollTo('gallery'); return false;">Gallery</a>
-                    <a href="#about" onclick="scrollTo('about'); return false;">About</a>
-                    <a href="#contact" onclick="scrollTo('contact'); return false;">Contact</a>
+                    <a onclick="scrollToSection('categories')">Shop</a>
+                    <a onclick="scrollToSection('gallery')">Gallery</a>
+                    <a onclick="scrollToSection('about')">About</a>
+                    <a onclick="scrollToSection('contact')">Contact</a>
                     <div class="cart-icon" onclick="toggleCart()">
                         🛒
                         <span class="cart-count" id="cartCount">0</span>
@@ -720,7 +720,7 @@
         <div class="container">
             <h2>Luxury Handcrafted Fragrances</h2>
             <p>Experience the intoxicating world of premium candles, oils, and room sprays. Each scent carefully crafted to transform your space into a sanctuary.</p>
-            <a href="#categories" class="cta-button" onclick="scrollTo('categories')">Shop Our Collection</a>
+            <a href="#categories" class="cta-button" onclick="event.preventDefault(); scrollToSection('categories')">Shop Our Collection</a>
         </div>
     </section>
 
@@ -729,25 +729,25 @@
         <div class="container">
             <h2 class="section-title">Our Premium Collections</h2>
             <div class="categories-grid">
-                <div class="category-card" onclick="scrollTo('products')">
+                <div class="category-card" onclick="scrollToSection('products')">
                     <div class="category-icon">🕯️</div>
                     <h3>Luxury Candles</h3>
                     <p>Hand-poured candles in 8oz and 16oz sizes, featuring long-lasting scents that fill your entire space.</p>
                     <div class="price-tag">$25 - $35</div>
                 </div>
-                <div class="category-card" onclick="scrollTo('products')">
+                <div class="category-card" onclick="scrollToSection('products')">
                     <div class="category-icon">💨</div>
                     <h3>Room Sprays</h3>
                     <p>Instant fragrance for any room. Perfect for quick refreshing or setting the mood.</p>
                     <div class="price-tag">$20</div>
                 </div>
-                <div class="category-card" onclick="scrollTo('products')">
+                <div class="category-card" onclick="scrollToSection('products')">
                     <div class="category-icon">🌸</div>
                     <h3>Fragrance Oils</h3>
                     <p>Concentrated oils perfect for diffusers, personal use, or creating your own blends.</p>
                     <div class="price-tag">$25</div>
                 </div>
-                <div class="category-card" onclick="scrollTo('products')">
+                <div class="category-card" onclick="scrollToSection('products')">
                     <div class="category-icon">🌿</div>
                     <h3>Air Fresheners</h3>
                     <p>Long-lasting air fresheners perfect for cars, closets, and small spaces.</p>
@@ -878,305 +878,4 @@
                             </select>
                         </div>
                         <div class="product-price" id="cookie-price">$25.00</div>
-                        <button class="add-to-cart" onclick="addToCart('Amys Vanilla Sugar Cookie', 'cookie-type', 'cookie-price')">Add to Cart</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Cart Sidebar -->
-    <div class="cart-sidebar" id="cartSidebar">
-        <div class="cart-header">
-            <h3>Your Cart</h3>
-            <button class="close-cart" onclick="toggleCart()">×</button>
-        </div>
-        <div class="cart-items" id="cartItems">
-            <p style="text-align: center; color: #666; padding: 20px;">Your cart is empty</p>
-        </div>
-        <div class="cart-total">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
-                <strong>Total: <span id="cartTotal">$0.00</span></strong>
-            </div>
-            <button class="checkout-btn" onclick="checkout()">Proceed to Checkout</button>
-        </div>
-    </div>
-
-    <!-- About Section -->
-    <section class="about" id="about">
-        <div class="container">
-            <div class="about-content">
-                <h2>About Scentzational Scentz</h2>
-                <p>Welcome to Scentzational Scentz By Kris, where every fragrance tells a story. Our small business is dedicated to providing excellent options in candles, oils, and sprays that transform ordinary moments into extraordinary experiences.</p>
-                <p>Each product is carefully crafted with attention to detail, using premium ingredients to ensure long-lasting, beautiful scents that fill your space with warmth and elegance.</p>
-                <p>From the romantic allure of Gardenia to the comforting embrace of Baby Powder, we offer a diverse collection of fragrances to suit every mood and occasion.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="contact" id="contact">
-        <div class="container">
-            <div class="contact-content">
-                <h2>Get In Touch</h2>
-                <p>Questions about our products or need a custom scent? We'd love to hear from you!</p>
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <div class="contact-icon">✉️</div>
-                        <div>
-                            <strong>Email</strong><br>
-                            <a href="mailto:scentzationalscentz@gmail.com" style="color: white;">scentzationalscentz@gmail.com</a>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">📱</div>
-                        <div>
-                            <strong>Facebook</strong><br>
-                            Scentzational Scentz By Kris
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">🚚</div>
-                        <div>
-                            <strong>Shipping</strong><br>
-                            Available Nationwide
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Scentzational Scentz By Kris. All rights reserved. | Handcrafted with love for fragrance enthusiasts everywhere.</p>
-        </div>
-    </footer>
-
-    <script>
-        // Carousel functionality
-        let currentSlideIndex = 0;
-        let slides, dots, totalSlides;
-
-        function initializeCarousel() {
-            slides = document.querySelectorAll('.carousel-slide');
-            dots = document.querySelectorAll('.carousel-dot');
-            totalSlides = slides.length;
-            
-            if (totalSlides > 0) {
-                showSlide(0);
-                
-                // Auto-play carousel
-                setInterval(() => {
-                    changeSlide(1);
-                }, 5000);
-            }
-        }
-
-        function showSlide(index) {
-            const wrapper = document.getElementById('carouselWrapper');
-            if (wrapper && slides.length > 0) {
-                wrapper.style.transform = `translateX(-${index * 100}%)`;
-                
-                // Update dots
-                dots.forEach((dot, i) => {
-                    dot.classList.toggle('active', i === index);
-                });
-                
-                currentSlideIndex = index;
-            }
-        }
-
-        function changeSlide(direction) {
-            currentSlideIndex += direction;
-            
-            if (currentSlideIndex >= totalSlides) {
-                currentSlideIndex = 0;
-            } else if (currentSlideIndex < 0) {
-                currentSlideIndex = totalSlides - 1;
-            }
-            
-            showSlide(currentSlideIndex);
-        }
-
-        function currentSlide(index) {
-            showSlide(index - 1);
-        }
-
-        // Initialize carousel when page loads
-        document.addEventListener('DOMContentLoaded', function() {
-            initializeCarousel();
-            
-            // Initialize product card animations
-            document.querySelectorAll('.product-card, .category-card').forEach(card => {
-                card.style.opacity = '0';
-                card.style.transform = 'translateY(20px)';
-                card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-                observer.observe(card);
-            });
-        });
-
-        // Cart functionality
-        let cart = [];
-        let cartTotal = 0;
-
-        function scrollTo(elementId) {
-            const element = document.getElementById(elementId);
-            if (element) {
-                element.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-        }
-
-        function updatePrice(selectElement, priceElementId) {
-            const price = selectElement.value;
-            document.getElementById(priceElementId).textContent = `${price}.00`;
-        }
-
-        function addToCart(productName, typeSelectId, priceElementId) {
-            const typeSelect = document.getElementById(typeSelectId);
-            const selectedOption = typeSelect.options[typeSelect.selectedIndex];
-            const price = parseFloat(typeSelect.value);
-            const productType = selectedOption.text.split(' - ')[0];
-            
-            const cartItem = {
-                id: Date.now(),
-                name: productName,
-                type: productType,
-                price: price
-            };
-            
-            cart.push(cartItem);
-            updateCartDisplay();
-            
-            // Show success message
-            alert(`${productName} (${productType}) added to cart!`);
-        }
-
-        function removeFromCart(itemId) {
-            cart = cart.filter(item => item.id !== itemId);
-            updateCartDisplay();
-        }
-
-        function updateCartDisplay() {
-            const cartItemsContainer = document.getElementById('cartItems');
-            const cartCount = document.getElementById('cartCount');
-            const cartTotalElement = document.getElementById('cartTotal');
-            
-            if (cart.length === 0) {
-                cartItemsContainer.innerHTML = '<p style="text-align: center; color: #666; padding: 20px;">Your cart is empty</p>';
-                cartCount.textContent = '0';
-                cartTotalElement.textContent = '$0.00';
-                return;
-            }
-            
-            cartItemsContainer.innerHTML = '';
-            cartTotal = 0;
-            
-            cart.forEach(item => {
-                cartTotal += item.price;
-                const cartItemElement = document.createElement('div');
-                cartItemElement.className = 'cart-item';
-                cartItemElement.innerHTML = `
-                    <div>
-                        <strong>${item.name}</strong><br>
-                        <small>${item.type}</small>
-                    </div>
-                    <div style="text-align: right;">
-                        <div>${item.price}.00</div>
-                        <button onclick="removeFromCart(${item.id})" style="background: #ff4444; color: white; border: none; border-radius: 4px; padding: 4px 8px; cursor: pointer; font-size: 12px; margin-top: 4px;">Remove</button>
-                    </div>
-                `;
-                cartItemsContainer.appendChild(cartItemElement);
-            });
-            
-            cartCount.textContent = cart.length;
-            cartTotalElement.textContent = `${cartTotal.toFixed(2)}`;
-        }
-
-        function toggleCart() {
-            const cartSidebar = document.getElementById('cartSidebar');
-            cartSidebar.classList.toggle('open');
-        }
-
-        function checkout() {
-            if (cart.length === 0) {
-                alert('Your cart is empty!');
-                return;
-            }
-            
-            // Create order summary
-            let orderSummary = 'ORDER SUMMARY:\n\n';
-            cart.forEach(item => {
-                orderSummary += `${item.name} - ${item.type}: ${item.price}.00\n`;
-            });
-            orderSummary += `\nTOTAL: ${cartTotal.toFixed(2)}\n\n`;
-            orderSummary += 'Shipping will be calculated and added to your total.\n\n';
-            orderSummary += 'To complete your order, please email this summary to:\nscentzationalscentz@gmail.com\n\n';
-            orderSummary += 'Include your shipping address and preferred payment method.';
-            
-            // For now, show the order summary - in a real implementation, this would process the order
-            alert(orderSummary);
-            
-            // Create email link
-            const subject = encodeURIComponent('New Order from Website');
-            const body = encodeURIComponent(orderSummary + '\n\nSHIPPING ADDRESS:\n[Please fill in your address]\n\nPREFERRED PAYMENT METHOD:\n[Please specify: PayPal, Venmo, etc.]');
-            const emailLink = `mailto:scentzationalscentz@gmail.com?subject=${subject}&body=${body}`;
-            
-            window.location.href = emailLink;
-        }
-
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Close cart when clicking outside
-        document.addEventListener('click', function(event) {
-            const cartSidebar = document.getElementById('cartSidebar');
-            const cartIcon = document.querySelector('.cart-icon');
-            
-            if (!cartSidebar.contains(event.target) && !cartIcon.contains(event.target) && cartSidebar.classList.contains('open')) {
-                cartSidebar.classList.remove('open');
-            }
-        });
-
-        // Add fade-in animation for product cards
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        // Observe product cards for animation
-        document.addEventListener('DOMContentLoaded', function() {
-            document.querySelectorAll('.product-card, .category-card').forEach(card => {
-                card.style.opacity = '0';
-                card.style.transform = 'translateY(20px)';
-                card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-                observer.observe(card);
-            });
-        });
-    </script>
-</body>
-</html>
+                        
