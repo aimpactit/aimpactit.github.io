@@ -480,6 +480,10 @@
                 gap: 15px;
             }
 
+            .hero {
+                padding: 160px 0 80px; /* Increased top padding for mobile */
+            }
+
             .hero h2 {
                 font-size: 2.5rem;
             }
@@ -502,6 +506,19 @@
                 width: 100vw;
                 right: -100vw;
             }
+
+            /* Ensure header doesn't get too tall on mobile */
+            header {
+                padding: 0.8rem 0;
+            }
+
+            .logo h1 {
+                font-size: 1.4rem;
+            }
+
+            .nav-links a {
+                font-size: 0.9rem;
+            }
         }
 
         /* Hidden elements for form processing */
@@ -520,9 +537,9 @@
                     <h1>Scentzational Scentz By Kris</h1>
                 </div>
                 <nav class="nav-links">
-                    <a onclick="scrollTo('categories')">Shop</a>
-                    <a onclick="scrollTo('about')">About</a>
-                    <a onclick="scrollTo('contact')">Contact</a>
+                    <a href="#categories" onclick="scrollTo('categories')">Shop</a>
+                    <a href="#about" onclick="scrollTo('about')">About</a>
+                    <a href="#contact" onclick="scrollTo('contact')">Contact</a>
                     <div class="cart-icon" onclick="toggleCart()">
                         🛒
                         <span class="cart-count" id="cartCount">0</span>
