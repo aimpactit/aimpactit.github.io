@@ -111,12 +111,14 @@
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(107, 91, 149, 0.8), rgba(136, 115, 158, 0.8)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600"><rect fill="%23f5f3f0" width="1000" height="600"/><g fill="%23e8e4e0" opacity="0.3"><circle cx="200" cy="150" r="80"/><circle cx="800" cy="400" r="120"/><circle cx="400" cy="500" r="60"/></g></svg>');
+            background: linear-gradient(rgba(107, 91, 149, 0.6), rgba(136, 115, 158, 0.6)), url('https://i.imgur.com/39KWxmr.jpg');
             color: white;
             padding: 140px 0 80px;
             text-align: center;
-            background-size: cover;
+            background-size: contain;
             background-position: center;
+            background-repeat: no-repeat;
+            min-height: 600px;
         }
 
         .hero h2 {
@@ -254,13 +256,28 @@
         }
 
         .product-image {
-            height: 200px;
-            background: linear-gradient(45deg, #6b5b95, #88739e);
+            height: 250px;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
             font-size: 48px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.1);
+            z-index: 1;
         }
 
         .product-info {
@@ -619,7 +636,7 @@
             <div class="products-grid">
                 <!-- Gardenia -->
                 <div class="product-card">
-                    <div class="product-image">🌺</div>
+                    <div class="product-image" style="background-image: url('https://i.imgur.com/YourGardeniaImageID.jpg');">🌺</div>
                     <div class="product-info">
                         <h3 class="product-name">Gardenia</h3>
                         <p class="product-description">Experience the heady intoxicating aroma of Gardenias blended with violet, green leaves, light berry notes and a hint of spicy cloves.</p>
